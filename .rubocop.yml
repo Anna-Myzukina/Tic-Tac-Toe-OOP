@@ -1,4 +1,5 @@
 AllCops:
+  TargetRubyVersion: 2.3
   Exclude:
     - "bin/*"
     - "db/*"
@@ -18,7 +19,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  ExcludedMethods: ['describe']
+  ExcludedMethods: ["describe"]
 Metrics/ModuleLength:
   Max: 150
 Metrics/CyclomaticComplexity:
