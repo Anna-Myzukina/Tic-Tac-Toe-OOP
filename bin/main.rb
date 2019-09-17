@@ -13,6 +13,14 @@ end
   board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
   display_board(board)
 
+def get_name
+    name = []
+    2.times do |i|
+    puts "Please enter name of player #{i +1}:"
+    name << gets.strip
+    end
+end
+
 def turn
   puts "Choose a spot between 1-9"
     spot = gets.strip
@@ -49,5 +57,8 @@ def move(board, index, current_player)
   board[index] = current_player
 puts "Now, #{current_player} move is displayed on the board"
 end
+
+get_name
+turn
 
 display_board(board)
