@@ -1,5 +1,6 @@
-require '../lib/ui.rb'
+`# frozen_string_literal: true`
 
+require '../lib/player'
 
 def display_board(the_board)
     puts " #{the_board[0]} | #{the_board[1]} | #{the_board[2]} "
@@ -37,9 +38,9 @@ end
 def current_player
 player = nil
 if turn_count() % 2 == 0
-    player = 'X'
+  player = 'X'
 else
-    player = 'O'
+  player = 'O'
 end
 return player
 end
