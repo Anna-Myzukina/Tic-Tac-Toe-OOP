@@ -37,7 +37,6 @@ def turn_count
   taken = 0
   @board.each do |i|
     taken += 1 if (i == 'X' || i == 'O')
-    end
   end
   taken
 end
