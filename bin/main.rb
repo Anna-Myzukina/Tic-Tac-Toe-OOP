@@ -42,8 +42,7 @@ def turn_count
 end
 
 def current_player
-    player = ''
-  (turn_count % 2).zero? ? player = 'X' : player = 'O'
+  return (turn_count % 2).zero? ? player = 'X' : player = 'O'
 end
 
 def move(board, index, current_player)
