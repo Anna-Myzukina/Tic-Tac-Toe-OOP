@@ -1,1 +1,1 @@
-require './lib/ui.rb'
+require '../lib/ui.rb'
