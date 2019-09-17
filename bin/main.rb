@@ -12,42 +12,42 @@ end
   board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
   display_board(board)
 
-  def turn
+def turn
     puts "Choose a spot between 1-9"
     spot = gets.strip
     spot = input_to_index(spot)
     if valid_move?(spot)
-      move(spot, current_player)
+        move(spot, current_player)
     else
-      turn
+        turn
     end
     display_board
-  end
+end
 
-  def turn_count
-    taken = 0
-    @board.each do |i|
-      if i == "X" || i == "O"
-        taken += 1
-      end
+def turn_count
+taken = 0
+@board.each do |i|
+    if i == "X" || i == "O"
+    taken += 1
     end
-    return taken
-  end
+end
+return taken
+end
 
-  def current_player
-    player = nil
-    if turn_count() % 2 == 0
-      player = 'X'
-    else
-      player = 'O'
-    end
-    return player
-  end
+def current_player
+player = nil
+if turn_count() % 2 == 0
+    player = 'X'
+else
+    player = 'O'
+end
+return player
+end
 
-  def move(board, index, current_player)
-    board[index] = current_player
-    puts "Now, #{current_player} move is displayed on the board"
-  end
+def move(board, index, current_player)
+board[index] = current_player
+puts "Now, #{current_player} move is displayed on the board"
+end
 
-  display_board(board)
+display_board(board)
   
