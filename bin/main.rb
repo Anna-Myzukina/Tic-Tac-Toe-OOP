@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require '../lib/player'
+require_relative '../lib/player'
 
 def display_board(the_board)
   puts " #{the_board[0]} | #{the_board[1]} | #{the_board[2]} "
