@@ -7,7 +7,7 @@ def display_board(the_board)
     puts " #{the_board[3]} | #{the_board[4]} | #{the_board[5]} "
     puts '-----------'
     puts " #{the_board[6]} | #{the_board[7]} | #{the_board[8]} "
-  end
+end
   puts 'Welcome to Tic Tac Toe'
   board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
   display_board(board)
@@ -44,4 +44,10 @@ def display_board(the_board)
     return player
   end
 
-  puts "Now, your move is displayed on the board"
+  def move(board, index, current_player)
+    board[index] = current_player
+    puts "Now, #{current_player} move is displayed on the board"
+  end
+
+  display_board(board)
+  
