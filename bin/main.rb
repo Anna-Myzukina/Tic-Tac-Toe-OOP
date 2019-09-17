@@ -43,12 +43,7 @@ end
 
 def current_player
   player = nil
-  if (turn_count % 2).zero?
-    player = 'X'
-  else
-    player = 'O'
-  end
-  player
+  (turn_count % 2).zero? ? player = 'X' : player = 'O'
 end
 
 def move(board, index, current_player)
