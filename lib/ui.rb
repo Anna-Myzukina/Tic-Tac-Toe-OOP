@@ -12,9 +12,4 @@ module UserInterface
   board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
   display_board(board)
 
-  def take_spot()
-    puts 'Choose a spot between 1-9'
-    spot = gets.strip
-    display_board(board)
-  end
 end
