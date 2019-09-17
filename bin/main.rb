@@ -16,8 +16,8 @@ display_board(board)
 def user_name
   name = []
   2.times do |i|
-  puts "Please enter name of player #{i +1}:"
-  name << gets.strip
+    puts "Please enter name of player #{i + 1}:"
+    name << gets.strip
   end
 end
 
@@ -36,16 +36,15 @@ end
 def turn_count
   taken = 0
   @board.each do |i|
-    if i == 'X' || i == 'O'
-      taken += 1
+    taken += 1 if (i == 'X' || i == 'O')
     end
   end
- taken
+  taken
 end
 
 def current_player
   player = nil
-  if (turn_count() % 2).zero?
+  if (turn_count % 2).zero?
     player = 'X'
   else
     player = 'O'
