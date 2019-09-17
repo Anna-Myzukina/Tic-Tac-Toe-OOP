@@ -42,7 +42,6 @@ def turn_count
 end
 
 def current_player
-  player = nil
   (turn_count % 2).zero? ? player = 'X' : player = 'O'
 end
 
