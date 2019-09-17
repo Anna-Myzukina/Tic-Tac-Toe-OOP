@@ -51,7 +51,7 @@ def move(board, index, current_player)
   puts "Now, #{current_player} move is displayed on the board"
 end
 
-get_name
+current_player
 turn
 
 display_board(board)
