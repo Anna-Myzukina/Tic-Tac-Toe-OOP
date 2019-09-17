@@ -36,7 +36,7 @@ end
 def turn_count
   taken = 0
   @board.each do |i|
-    taken += 1 if i.include? 'X' || i.include? 'O'
+    taken += 1 unless i.nil?
   end
   taken
 end
