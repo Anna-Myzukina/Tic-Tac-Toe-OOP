@@ -2,7 +2,6 @@
 
 require_relative '../lib/player'
 
-
 class Tictactoe
   attr_accessor :board, :name
 
@@ -17,10 +16,10 @@ class Tictactoe
     puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
     puts '-----------'
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
-    puts " "
+    puts ' '
   end
   
-  def move_board (idx) 
+  def move_board (idx)
     @board[idx] = 'X'
   end
 
@@ -31,7 +30,7 @@ class Tictactoe
   def turn
     puts 'Choose a spot between 1-9'
     spot = gets.strip
-    spot = input_to_index(spot)
+    #spot = input_to_index(spot)
     display_board
   end
   
@@ -54,13 +53,10 @@ class Tictactoe
       @name << gets.strip
     end
   end
-
 end
 
-
 puts 'Welcome to Tic Tac Toe'
-puts " "
-
+puts ' '
 board = Tictactoe.new
 
 board.display_board
