@@ -43,8 +43,8 @@ class Tictactoe
   end
 
   def current_player
-    turn_count.even? ? player = 'X' : player = 'O'
-    player
+    (turn_count % 2).zero? ? player = 'X' : player = 'O'
+    return player
   end
 
   def user_name
