@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # frozen_string_literal: true
 
 require_relative '../lib/player'
@@ -19,6 +20,12 @@ class Tictactoe
     puts ' '
   end
 
+  def move(index, current_player)
+    @board[index] = @current_player
+    p board
+    puts "Now, #{current_player} move is displayed on the board"
+  end
+
   def move_board(idx)
     @board[idx] = 'X'
   end
@@ -28,9 +35,13 @@ class Tictactoe
   end
 
   def turn
-    puts 'Choose a spot between 1-9'
-    spot = gets.strip
-    # spot = input_to_index(spot)
+    @current_player = @current_player == @name[0] ? @name[1] : @name[0]
+    puts "#{@current_player}, Choose a spot between 1-9"
+    spot = gets.strip.to_i
+    until spot.positive?
+      puts 'Please enter a valid move'
+      spot = gets.strip.to_i
+    end
     display_board
   end
 
@@ -61,4 +72,5 @@ board.user_name
   board.move_board(i)
   board.display_board
 end
+
 puts 'Congratulations you WON!!!'
