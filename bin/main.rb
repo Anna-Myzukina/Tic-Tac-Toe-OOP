@@ -29,7 +29,7 @@ class Tictactoe
 
   def turn
     puts 'Choose a spot between 1-9'
-    # spot = gets.strip
+    spot = gets.strip
     # spot = input_to_index(spot)
     display_board
   end
@@ -40,10 +40,6 @@ class Tictactoe
       taken += 1 unless i.nil?
     end
     taken
-  end
-
-  def current_player
-    return turn_count.even? ? player = 'X' : player = 'O'
   end
 
   def user_name
@@ -65,3 +61,4 @@ board.user_name
   board.move_board(i)
   board.display_board
 end
+puts 'Congratulations you WON!!!'
