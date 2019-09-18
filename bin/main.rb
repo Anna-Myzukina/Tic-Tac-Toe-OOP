@@ -73,5 +73,4 @@ board.user_name
   board.display_board
 end
 
-
-puts "Congratulations you WON!!! "
+puts 'Congratulations you WON!!!'
