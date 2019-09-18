@@ -3,6 +3,8 @@ linters:
     display_cop_names: true
 files:
   ignore:
+    - "lib/*"
+    - "bin/*"
     - "db/*"
     - "config/*"
     - "Guardfile"
