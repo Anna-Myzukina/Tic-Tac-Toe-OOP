@@ -18,8 +18,8 @@ class Tictactoe
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
     puts ' '
   end
-  
-  def move_board (idx)
+
+  def move_board(idx)
     @board[idx] = 'X'
   end
 
@@ -29,11 +29,11 @@ class Tictactoe
 
   def turn
     puts 'Choose a spot between 1-9'
-    spot = gets.strip
-    #spot = input_to_index(spot)
+    # spot = gets.strip
+    # spot = input_to_index(spot)
     display_board
   end
-  
+
   def turn_count
     taken = 0
     @board.each do |i|
@@ -41,12 +41,12 @@ class Tictactoe
     end
     taken
   end
-  
+
   def current_player
     turn_count.even? ? player = 'X' : player = 'O'
-    return player
+    player
   end
-  
+
   def user_name
     2.times do |i|
       puts "Please enter name of player #{i + 1}:"
