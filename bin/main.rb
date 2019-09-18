@@ -11,6 +11,12 @@ class Tictactoe
     @name = []
   end
 
+  def welcome
+    puts `clear`
+    puts 'Welcome to Tic Tac Toe'
+    puts ' '
+  end
+
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts '-----------'
@@ -61,10 +67,8 @@ class Tictactoe
   end
 end
 
-puts 'Welcome to Tic Tac Toe'
-puts ' '
 board = Tictactoe.new
-
+board.welcome
 board.display_board
 board.user_name
 3.times do |i|
