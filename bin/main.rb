@@ -35,7 +35,7 @@ class Tictactoe
   def move_board(idx)
     if @current_player == @name[0] 
       sign = 'X'
-    else
+    elsif @current_player == @name[1]
       sign = 'O'
     end
     @board[idx] = sign
@@ -53,9 +53,11 @@ class Tictactoe
       puts 'Please enter a valid move'
       spot = gets.strip.to_i
     end
-    if Player::valid_move?(@board, spot)
-      move_board(input_to_index(spot))
+    until Player::valid_move?(@board, input_to_index(spot))
+      puts "#{@current_player}, choose a spot between 1-9 which is not taken"
+      spot = gets.strip.to_i
     end
+    move_board(input_to_index(spot))
     display_board
   end
 
@@ -79,7 +81,7 @@ board = Tictactoe.new
 board.welcome
 board.display_board
 board.user_name
-3.times do |i|
+5.times do
   board.turn
 end
 
