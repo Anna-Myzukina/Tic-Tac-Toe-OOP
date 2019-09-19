@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require_relative '../lib/player'
+require_relative '../lib/game'
 
 class Tictactoe
   attr_accessor :board, :name
@@ -75,7 +76,14 @@ class Tictactoe
       @name << gets.strip
     end
   end
+
+  def play
+    until over?
+      turn
+    end
+    
 end
+
 
 board = Tictactoe.new
 board.welcome
