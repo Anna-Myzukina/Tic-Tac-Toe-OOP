@@ -60,9 +60,9 @@ class Tictactoe
       spot = gets.strip.to_i
     end
     move_board(input_to_index(spot))
+    puts `clear`
     display_board
     # check if we have a winner or a draw
-    # puts Game::won?(@board)
     if Game::won?(@board)
       puts "Congratulations #{@current_player} you won!!!" 
       @game_over = true
@@ -97,4 +97,3 @@ board.display_board
 board.user_name
 board.play
 
-# puts 'Congratulations you WON!!!'
