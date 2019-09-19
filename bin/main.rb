@@ -10,6 +10,7 @@ class Tictactoe
   def initialize
     @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     @name = []
+    @game_over = false
   end
 
   def welcome
@@ -62,8 +63,13 @@ class Tictactoe
     display_board
     # check if we have a winner or a draw
     # puts Game::won?(@board)
-    puts "Congratulations #{@current_player} you won!!!" if Game::won?(@board)
-    puts "Draw" if Game::over?(@board, turn_count)
+    if Game::won?(@board)
+      puts "Congratulations #{@current_player} you won!!!" 
+      @game_over = true
+    elsif Game::full?(turn_count)
+      puts "It is a Draw!!!" 
+      @game_over = true
+    end
   end
 
   def turn_count
@@ -78,7 +84,7 @@ class Tictactoe
   end
 
   def play
-    until Game::over?(@board, turn_count)
+    until @game_over
       turn
     end
   end
