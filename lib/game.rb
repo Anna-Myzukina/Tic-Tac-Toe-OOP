@@ -30,15 +30,6 @@ module Game
   end
 
   def self.over?(board, turn_count)
-    won?(board) || full?(turn_count) #|| draw?
-    # false
+    won?(board) || full?(turn_count)
   end
-
-  def self.winner
-    won = ''
-    if winner == won?
-      won = @board[winner.first]
-    end
-  end
-
 end
