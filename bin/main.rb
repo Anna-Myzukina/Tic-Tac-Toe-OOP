@@ -33,7 +33,12 @@ class Tictactoe
   end
 
   def move_board(idx)
-    @board[idx] = 'X'
+    if @current_player == @name[0] 
+      sign = 'X'
+    else
+      sign = 'O'
+    end
+    @board[idx] = sign
   end
 
   def input_to_index(user_input)
@@ -47,6 +52,9 @@ class Tictactoe
     until spot.positive?
       puts 'Please enter a valid move'
       spot = gets.strip.to_i
+    end
+    if Player::valid_move?(@board, spot)
+      move_board(input_to_index(spot))
     end
     display_board
   end
@@ -73,8 +81,7 @@ board.display_board
 board.user_name
 3.times do |i|
   board.turn
-  board.move_board(i)
-  board.display_board
 end
+
 
 puts 'Congratulations you WON!!!'
