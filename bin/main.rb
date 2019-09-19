@@ -60,14 +60,14 @@ class Tictactoe
     end
     move_board(input_to_index(spot))
     display_board
+    # check if we have a winner or a draw
+    # puts Game::won?(@board)
+    puts "Congratulations #{@current_player} you won!!!" if Game::won?(@board)
+    puts "Draw" if Game::over?(@board, turn_count)
   end
 
   def turn_count
-    taken = 0
-    @board.each do |i|
-      taken += 1 unless i.nil?
-    end
-    taken
+    @board.select {|e| e == 'X' || e == 'O'}.size
   end
 
   def user_name
@@ -78,20 +78,17 @@ class Tictactoe
   end
 
   def play
-    until over?
+    until Game::over?(@board, turn_count)
       turn
     end
+  end
     
 end
-
 
 board = Tictactoe.new
 board.welcome
 board.display_board
 board.user_name
-5.times do
-  board.turn
-end
+board.play
 
-
-puts 'Congratulations you WON!!!'
+# puts 'Congratulations you WON!!!'
