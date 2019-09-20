@@ -81,6 +81,10 @@ class Tictactoe
       puts "Please enter name of player #{i + 1}:"
       @name << gets.strip
     end
+    until @name[1] != @name[0]
+      puts "Your name should be different than #{@name[0]}:"
+      @name[1] = gets.strip
+    end
   end
 
   def play
