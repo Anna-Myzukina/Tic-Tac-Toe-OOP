@@ -12,6 +12,7 @@ class Tictactoe
     @name = []
     @game_over = false
     @player = Player.new
+    @game = Game.new
   end
 
   def welcome
@@ -56,7 +57,7 @@ class Tictactoe
       puts 'Please enter a valid move'
       spot = gets.strip.to_i
     end
-    until @player::valid_move?(@board, input_to_index(spot))
+    until @player.valid_move?(@board, input_to_index(spot))
       puts "#{@current_player}, choose a spot between 1-9 which is not taken"
       spot = gets.strip.to_i
     end
@@ -64,10 +65,10 @@ class Tictactoe
     puts `clear`
     display_board
     # check if we have a winner or a draw
-    if Game::won?(@board)
+    if @game.won?(@board)
       puts "Congratulations #{@current_player} you won!!!" 
       @game_over = true
-    elsif Game::full?(turn_count)
+    elsif @game.full?(turn_count)
       puts "It is a Draw!!!" 
       @game_over = true
     end
@@ -100,8 +101,5 @@ class Tictactoe
 end
 
 board = Tictactoe.new
-# board.welcome
-# board.display_board
-# board.user_name
 board.play
 
