@@ -11,6 +11,7 @@ class Tictactoe
     @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     @name = []
     @game_over = false
+    @player = Player.new
   end
 
   def welcome
@@ -55,7 +56,7 @@ class Tictactoe
       puts 'Please enter a valid move'
       spot = gets.strip.to_i
     end
-    until Player::valid_move?(@board, input_to_index(spot))
+    until @player::valid_move?(@board, input_to_index(spot))
       puts "#{@current_player}, choose a spot between 1-9 which is not taken"
       spot = gets.strip.to_i
     end
@@ -88,6 +89,9 @@ class Tictactoe
   end
 
   def play
+    welcome
+    display_board
+    user_name
     until @game_over
       turn
     end
@@ -96,8 +100,8 @@ class Tictactoe
 end
 
 board = Tictactoe.new
-board.welcome
-board.display_board
-board.user_name
+# board.welcome
+# board.display_board
+# board.user_name
 board.play
 
