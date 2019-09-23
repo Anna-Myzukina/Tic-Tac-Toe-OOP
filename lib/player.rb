@@ -3,9 +3,9 @@
 class Player
   attr_reader :name, :symb
 
-  def initialize(name)
+  def initialize(name, symb)
     @name = name
-    @symb = ''
+    @symb = symb
   end
 
   def add_symb(symb)

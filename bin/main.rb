@@ -29,19 +29,8 @@ class Tictactoe
     puts ' '
   end
 
-  def move(index, current_player)
-    @board[index] = @current_player
-    p board
-    puts "Now, #{current_player} move is displayed on the board"
-  end
-
   def move_board(idx)
-    if @current_player == @name[0] 
-      sign = 'X'
-    elsif @current_player == @name[1]
-      sign = 'O'
-    end
-    @board[idx] = sign
+    @board[idx] = @current_player.symb
   end
 
   def input_to_index(user_input)
@@ -81,11 +70,11 @@ class Tictactoe
     symbols = ['X', 'O']
     2.times do |i|
       puts "Please enter name of player #{symbols[i]}:"
-      @name << Player.new(gets.strip)
+      @name << Player.new(gets.strip, symbols[i])
     end
-    until @name[1] != @name[0]
-      puts "Your name should be different than #{@name[0]}:"
-      @name[1] = gets.strip
+    until @name[1].name != @name[0].name
+      puts "Your name should be different than #{@name[0].name}:"
+      @name[1] = Player.new(gets.strip, 'O')
     end
   end
 
@@ -93,7 +82,6 @@ class Tictactoe
     welcome
     display_board
     user_name
-    
     until @game_over
       turn
     end
