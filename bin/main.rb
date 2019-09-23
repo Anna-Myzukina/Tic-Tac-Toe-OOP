@@ -11,7 +11,6 @@ class Tictactoe
     @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     @name = []
     @game_over = false
-    @player = Player.new
     @game = Game.new
   end
 
@@ -51,14 +50,14 @@ class Tictactoe
 
   def turn
     @current_player = @current_player == @name[0] ? @name[1] : @name[0]
-    puts "#{@current_player}, choose a spot between 1-9"
+    puts "#{@current_player.name}, choose a spot between 1-9"
     spot = gets.strip.to_i
     until spot.positive?
       puts 'Please enter a valid move'
       spot = gets.strip.to_i
     end
-    until @player.valid_move?(@board, input_to_index(spot))
-      puts "#{@current_player}, choose a spot between 1-9 which is not taken"
+    until @game.valid_move?(@board, input_to_index(spot))
+      puts "#{@current_player.name}, choose a spot between 1-9 which is not taken"
       spot = gets.strip.to_i
     end
     move_board(input_to_index(spot))
@@ -66,7 +65,7 @@ class Tictactoe
     display_board
     # check if we have a winner or a draw
     if @game.won?(@board)
-      puts "Congratulations #{@current_player} you won!!!" 
+      puts "Congratulations #{@current_player.name} you won!!!" 
       @game_over = true
     elsif @game.full?(turn_count)
       puts "It is a Draw!!!" 
@@ -79,9 +78,10 @@ class Tictactoe
   end
 
   def user_name
+    symbols = ['X', 'O']
     2.times do |i|
-      puts "Please enter name of player #{i + 1}:"
-      @name << gets.strip
+      puts "Please enter name of player #{symbols[i]}:"
+      @name << Player.new(gets.strip)
     end
     until @name[1] != @name[0]
       puts "Your name should be different than #{@name[0]}:"
@@ -93,6 +93,7 @@ class Tictactoe
     welcome
     display_board
     user_name
+    
     until @game_over
       turn
     end

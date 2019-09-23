@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
 class Player
-  def position_taken?(board, index)
-    !(board[index].nil? || board[index] == ' ')
+  attr_reader :name, :symb
+
+  def initialize(name)
+    @name = name
+    @symb = ''
   end
 
-  def valid_move?(board, index)
-    index.between?(0, 9) && !position_taken?(board, index)
+  def add_symb(symb)
+    @symb = symb
   end
 end

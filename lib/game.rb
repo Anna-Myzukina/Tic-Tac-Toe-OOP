@@ -14,6 +14,14 @@ class Game
     [0, 4, 8]
   ].freeze
 
+  def valid_move?(board, index)
+    index.between?(0, 9) && !position_taken?(board, index)
+  end
+
+  def position_taken?(board, index)
+    !(board[index].nil? || board[index] == ' ')
+  end
+
   def won?(board)
     WIN_COMBINATIONS.detect do |combo|
       board[combo[0]] == board[combo[1]] &&
