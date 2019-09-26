@@ -25,4 +25,13 @@ RSpec.describe Game do
       expect(game.position_taken?(board, index)).to be_falsey
     end
   end
+  describe '#won?' do
+    it 'returns true/false if there winner or not' do
+      game = Game.new
+      board_false = [' ', ' ', 'O', ' ', 'X', ' ', ' ', ' ', ' ']
+      board_true = [' ', ' ', '0', ' ', '0', ' ', '0', ' ', ' ']
+      expect(game.won?(board_false)).to be_falsey
+      expect(game.won?(board_true)).to be_truthy
+    end
+  end
 end
