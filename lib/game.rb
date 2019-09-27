@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../lib/player'
+require_relative '../lib/game'
 
 class Game
   WIN_COMBINATIONS = [
@@ -30,11 +30,7 @@ class Game
   end
 
   def full?(turn_count)
-    turn_count == 9
-  end
-
-  def self.draw?
-    !won? && full?
+    turn_count >= 9
   end
 
   def over?(board, turn_count)
