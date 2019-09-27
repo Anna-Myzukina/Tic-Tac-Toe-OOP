@@ -8,7 +8,4 @@ class Player
     @symb = symb
   end
 
-  def add_symb(symb)
-    @symb = symb
-  end
 end
