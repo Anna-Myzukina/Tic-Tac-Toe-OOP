@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../lib/game'
-
 class Game
   WIN_COMBINATIONS = [
     [0, 1, 2],
