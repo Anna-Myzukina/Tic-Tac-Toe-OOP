@@ -4,7 +4,7 @@ require '../lib/game'
 
 RSpec.describe Game do
   let(:game) { Game.new }
-  let(:board) { [' ', ' ', 'O', ' ', 'X', ' ', ' ', ' ', ' ']}
+  let(:board) { [' ', ' ', 'O', ' ', 'X', ' ', ' ', ' ', ' '] }
 
   describe '#valid_move?' do
     it 'returns true/false based on whether the position is already occupied' do
