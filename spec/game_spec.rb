@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require '../lib/game'
+require_relative '../lib/game'
 
 RSpec.describe Game do
   let(:game) { Game.new }
@@ -39,14 +39,14 @@ RSpec.describe Game do
     end
   end
 
-  describe '#full?' do
-    it 'return true/false if board is full or not' do
+  describe '#draw?' do
+    it '"draws game when all positions are taken"' do
       turn_count = 10
-      expect(game.full?(turn_count)).to be_truthy
+      expect(game.draw?(turn_count)).to be_truthy
     end
-    it 'return true/false if board is full or not' do
+    it '"draws game when all positions are taken"' do
       turn_count = 5
-      expect(game.full?(turn_count)).to be_falsey
+      expect(game.draw?(turn_count)).to be_falsey
     end
   end
 

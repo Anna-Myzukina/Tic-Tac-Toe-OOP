@@ -56,7 +56,7 @@ class Tictactoe
     if @game.won?(@board)
       puts "Congratulations #{@current_player.name} you won!!!" 
       @game_over = true
-    elsif @game.full?(turn_count)
+    elsif @game.draw?(turn_count)
       puts "It is a Draw!!!" 
       @game_over = true
     end

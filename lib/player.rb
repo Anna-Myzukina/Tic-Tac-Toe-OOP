@@ -7,5 +7,4 @@ class Player
     @name = name
     @symb = symb
   end
-
 end

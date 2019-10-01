@@ -27,11 +27,11 @@ class Game
     end
   end
 
-  def full?(turn_count)
+  def draw?(turn_count)
     turn_count >= 9
   end
 
   def over?(board, turn_count)
-    won?(board) || full?(turn_count)
+    won?(board) || draw?(turn_count)
   end
 end
