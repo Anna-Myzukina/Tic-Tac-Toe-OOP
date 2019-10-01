@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../lib/player'
-
 class Game
   WIN_COMBINATIONS = [
     [0, 1, 2],
@@ -29,15 +27,11 @@ class Game
     end
   end
 
-  def full?(turn_count)
-    turn_count == 9
-  end
-
-  def self.draw?
-    !won? && full?
+  def draw?(turn_count)
+    turn_count >= 9
   end
 
   def over?(board, turn_count)
-    won?(board) || full?(turn_count)
+    won?(board) || draw?(turn_count)
   end
 end
