@@ -3,6 +3,7 @@
 - Original project specification at [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 - Tic-tac-toe [From Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
+## Example Game play:
 <p align="center">
   <img src="img/3b2hm4.gif">
 </p>
