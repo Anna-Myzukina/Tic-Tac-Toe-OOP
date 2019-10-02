@@ -35,3 +35,6 @@ To play Tic-tac-toe:
 
 - [Nick Haras](https://github.com/macnick)
 - [Anna Myzukina](https://github.com/Anna-Myzukina)
+
+## License:
+* MIT License, see [LICENSE](LICENSE.md) for details.
