@@ -3,12 +3,12 @@
 - Original project specification at [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 - Tic-tac-toe [From Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
-## Example Game play:
+## Example Game play
 <p align="center">
   <img src="img/3b2hm4.gif">
 </p>
 
-## Game Rule:
+## Features
 
 Tic Tac Toe is a Cool Math Games:
 Xs and Os is a paper-and-pencil game for two players, X and O:
@@ -19,11 +19,11 @@ Xs and Os is a paper-and-pencil game for two players, X and O:
 The following example game is won by the first player, X:
 ![example](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Tic-tac-toe-game-1.svg/1280px-Tic-tac-toe-game-1.svg.png)
 
-## Technologies:
+## Technologies
 
 - Ruby
 
-## Instructions:
+## Getting started
 
 To play Tic-tac-toe:
 
@@ -31,10 +31,26 @@ To play Tic-tac-toe:
 - cd Tic-Tac-Toe-OOP/
 - run the game, using command: bin/main.rb
 
-## Authors:
 
-- [Nick Haras](https://github.com/macnick)
-- [Anna Myzukina](https://github.com/Anna-Myzukina)
+## Authors
 
-## License:
+👤 **Author1**
+
+- Github: [Anna-Myzukina](https://github.com/Anna-Myzukina)
+- Twitter: [@twitterhandle](https://twitter.com/AnnaMuzykina)
+- Linkedin: [linkedin](https://www.linkedin.com/in/ann-muzykina/)
+
+👤 **Author2**
+
+- Github: [Nick Haras](https://github.com/macnick)
+
+
+## Show your support
+
+* Give a ⭐️ if you like this project!
+
+
+
+## 📝 License
+
 * MIT License, see [LICENSE](LICENSE.md) for details.
