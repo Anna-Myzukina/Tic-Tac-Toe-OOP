@@ -5,7 +5,8 @@
 
 ## Description
 
-Build a tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns.
+This is a part of a series of projects to be completed by students of Microverse.
+Microverse version of Tic-Tac-Toe game. I Built a tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns.
 
 ## Example Game play
 <p align="center">
