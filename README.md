@@ -36,6 +36,11 @@ To play Tic-tac-toe:
 - cd Tic-Tac-Toe-OOP/
 - run the game, using command: bin/main.rb
 
+### Run tests
+
+```
+rspec
+```
 
 ## Authors
 
